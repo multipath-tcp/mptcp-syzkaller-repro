@@ -1,0 +1,10 @@
+# {Threaded:true Collide:false Repeat:true RepeatTimes:0 Procs:1 Sandbox:none Fault:false FaultCall:-1 FaultNth:0 Leak:false NetInjection:true NetDevices:true NetReset:false Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false UseTmpDir:true HandleSegv:false Repro:false Trace:false}
+r0 = socket$inet_mptcp(0x2, 0x1, 0x106)
+r1 = socket$inet_mptcp(0x2, 0x1, 0x106)
+bind$inet(r1, &(0x7f00000013c0)={0x2, 0x4e20, @multicast2}, 0x10)
+connect$inet(r1, &(0x7f0000000040)={0x2, 0x0, @loopback}, 0x10)
+listen(r1, 0x3)
+r2 = socket$inet6_tcp(0xa, 0x1, 0x0)
+ioctl$sock_SIOCGIFVLAN_SET_VLAN_NAME_TYPE_CMD(r2, 0x8982, 0x0)
+connect$inet(r0, &(0x7f0000000040)={0x2, 0x4e20, @loopback}, 0x4d)
+sendmsg$inet(r0, &(0x7f0000000280)={0x0, 0x0, &(0x7f0000000000)=[{&(0x7f0000000080)="ff", 0xff3e}], 0x1}, 0x0)
